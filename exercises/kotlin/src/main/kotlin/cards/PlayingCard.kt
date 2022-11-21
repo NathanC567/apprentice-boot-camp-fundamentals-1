@@ -1,4 +1,4 @@
 package cards
 
-class PlayingCard {
+class PlayingCard (val suit: Suit, val faceValue: Int) {
 }
