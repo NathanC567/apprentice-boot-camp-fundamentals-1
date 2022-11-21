@@ -19,7 +19,7 @@ class Cards {
                     12 -> "king"
                     else -> throw IllegalArgumentException("Something went wrong " + card.faceValue + "is not a valid faceValue!")
                 }
-                result[cardNumber] = "$faceValueName of ${card.suit.suitName}"
+                result[cardNumber] = "$faceValueName of ${card.suit.name.lowercase()}"
             }
             return result
         }
