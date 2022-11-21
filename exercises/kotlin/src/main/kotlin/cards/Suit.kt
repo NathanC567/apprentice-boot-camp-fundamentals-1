@@ -5,5 +5,4 @@ enum class Suit() {
     DIAMONDS,
     HEARTS,
     SPADES
-
 }
