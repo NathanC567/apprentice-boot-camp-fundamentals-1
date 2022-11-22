@@ -1,7 +1,10 @@
 package cards
 
-class AnimalCard(private val animal: Animal) {
-    fun snap(otherCard: AnimalCard?): Boolean {
+class AnimalCard (private val animal: Animal): Card {
+
+
+    override fun snap(otherCard: Card?): Boolean {
+        otherCard as AnimalCard?
         return (otherCard != null) && animal == otherCard.animal
     }
 
@@ -9,3 +12,4 @@ class AnimalCard(private val animal: Animal) {
         return animal.toString()
     }
 }
+

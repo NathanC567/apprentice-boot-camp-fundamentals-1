@@ -1,10 +1,9 @@
 package cards
-class Deck(val deck: ArrayList<PlayingCard> = arrayListOf()) {
-    init {
-        for (suit in Suit.values()) {
-            for (faceValue in FaceValue.values()) {
-                deck.add( PlayingCard(suit, faceValue))
-            }
-        }
-    }
+
+interface Deck {
+    fun shuffle()
+
+    fun getCards(): MutableList<String>
+
+    fun deal(): Card?
 }

@@ -1,13 +1,10 @@
 package cards
-
-internal class AnimalDeck: Deck {
-    private val cards: MutableList<AnimalCard?>
-
+class PlayingCardDeck(val cards: ArrayList<PlayingCard> = arrayListOf()): Deck {
     init {
-        cards = ArrayList()
-        for (animal in Animal.values()) {
-            cards.add(AnimalCard(animal))
-            cards.add(AnimalCard(animal))
+        for (suit in Suit.values()) {
+            for (faceValue in FaceValue.values()) {
+                cards.add( PlayingCard(suit, faceValue))
+            }
         }
     }
 
@@ -24,7 +21,7 @@ internal class AnimalDeck: Deck {
         return result
     }
 
-    override fun deal(): AnimalCard? {
+    override fun deal(): Card {
         return cards.removeAt(0)
     }
 }

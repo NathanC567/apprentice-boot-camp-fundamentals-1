@@ -2,7 +2,7 @@ package cards
 
 import java.util.*
 
-internal class Snap(private val deck: AnimalDeck) {
+internal class Snap(private val deck: Deck) {
     private var player1Score = 0
     private var player2Score = 0
 
@@ -12,7 +12,7 @@ internal class Snap(private val deck: AnimalDeck) {
 
     fun play() {
         val scanner = Scanner(System.`in`)
-        var previousCard: AnimalCard? = null
+        var previousCard: Card? = null
         while (deck.getCards().isNotEmpty()) {
             val currentCard = deck.deal()
             println(currentCard)
@@ -47,8 +47,9 @@ internal class Snap(private val deck: AnimalDeck) {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val snap = Snap(AnimalDeck())
+            val snap = Snap(PlayingCardDeck())
             snap.play()
         }
+
     }
 }

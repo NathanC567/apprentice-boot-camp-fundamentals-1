@@ -4,8 +4,8 @@ class Cards {
     val cards: MutableList<String>
         get() {
             val result = MutableList(52) {""}
-            val deck = Deck()
-            for ((cardNumber, card) in deck.deck.withIndex()) {
+            val deck = PlayingCardDeck()
+            for ((cardNumber, card) in deck.cards.withIndex()) {
                 result[cardNumber] = "${card.faceValue.faceValueName} of ${card.suit.name.lowercase()}"
             }
             return result
