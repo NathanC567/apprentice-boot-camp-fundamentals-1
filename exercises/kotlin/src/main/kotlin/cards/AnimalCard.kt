@@ -1,11 +1,12 @@
 package cards
 
-class AnimalCard (private val animal: Animal): Card {
+class AnimalCard (val animal: Animal): Card {
 
 
     override fun snap(otherCard: Card?): Boolean {
+        if (otherCard?.javaClass != javaClass) return false
         otherCard as AnimalCard?
-        return (otherCard != null) && animal == otherCard.animal
+        return animal == otherCard.animal
     }
 
     override fun toString(): String {

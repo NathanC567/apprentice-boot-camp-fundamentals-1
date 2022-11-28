@@ -2,8 +2,9 @@ package cards
 
 class PlayingCard(val suit: Suit, val faceValue: FaceValue): Card {
     override fun snap(otherCard: Card?): Boolean {
+        if (otherCard?.javaClass != javaClass) return false
         otherCard as PlayingCard?
-        return (otherCard != null) && faceValue == otherCard.faceValue
+        return faceValue == otherCard.faceValue
     }
 
     override fun toString(): String {

@@ -1,6 +1,6 @@
 package cards
 
-internal class AnimalDeck (private val animalCards: MutableList<AnimalCard?> = mutableListOf()): Deck(animalCards as MutableList<Card>) {
+class AnimalDeck (val animalCards: MutableList<AnimalCard?> = mutableListOf()): Deck(animalCards as MutableList<Card>) {
 
     init {
         for (animal in Animal.values()) {

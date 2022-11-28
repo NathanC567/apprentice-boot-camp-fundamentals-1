@@ -18,6 +18,7 @@ internal class Snap(private val deck: Deck) {
             println(currentCard)
             val input = scanner.nextLine()
             if (input.isNotEmpty() && input[0] == 'a') {
+
                 if (currentCard!!.snap(previousCard)) {
                     println("SNAP! score Player 1")
                     player1Score++
@@ -47,7 +48,12 @@ internal class Snap(private val deck: Deck) {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val snap = Snap(AnimalDeck())
+            val snap = Snap(
+                MixedDeck(
+                    PlayingCardDeck(),
+                    AnimalDeck()
+                )
+            )
             snap.play()
         }
 
