@@ -5,7 +5,7 @@ class Cards {
         get() {
             val result = MutableList(52) {""}
             val deck = PlayingCardDeck()
-            for ((cardNumber, card) in deck.cards.withIndex()) {
+            for ((cardNumber, card) in deck.playingCards.withIndex()) {
                 result[cardNumber] = "${card.faceValue.faceValueName} of ${card.suit.name.lowercase()}"
             }
             return result
